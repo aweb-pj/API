@@ -46,4 +46,32 @@ HOST: http://mind.jtwang.me
 
 ## Teacher Logout [/logout]
 
+## Material 
+```json
+    {
+        material_name(char max = 100)
+        pk (integer)
+        node (integer pk for corresponding node)
+        material_file(char )
+    }
+```
+* request
+```json
+(get,put,delete)url:/tree/material/<pk>
 
+(post)url:/tree/material/name<material_name>node<node_pk>/
+header:{
+    "Content-Type":application/x-www-form-urlencoded,
+    "Content-Disposition":form-data;filename = "test.txt\"
+}
+```
+* response
+```
+200 :{
+   status:'success'
+}
+
+400 :{
+    status:'failed'
+}
+```
