@@ -340,7 +340,37 @@ no corresponding homework
 
 {}
 
-## Get a file [/file/(material_id)] [GET]
+## Add a material [materials] [POST]
+
++ Request
+
+{
+	node_id (id of corresponding node)
+	material_name (char max 100)
+}
+
++ Response 201
+
+{}
+
++ Response 400
+
+missing node_id
+{}
+
++ Response 403
+
+{
+    detail:user not teacher
+}
+
++ Response 403
+
+{
+    detail:login first
+}
+
+## Get a file [/downloadfile/(material_id)] [GET]
 
 + Request
 
@@ -361,5 +391,7 @@ download file as an attachment
 {
     detail:login first
 }
+
+
 
 
